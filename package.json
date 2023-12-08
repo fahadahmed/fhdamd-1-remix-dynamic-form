@@ -5,18 +5,23 @@
   "type": "module",
   "scripts": {
     "build": "remix build",
-    "dev": "remix dev --manual",
+    "dev": "pnpm run dev:remix & pnpm run dev:sass",
+    "dev:remix": "remix dev --manual",
+    "dev:sass": "npx sass --load-path=node_modules --no-source-map --watch app/:app/",
     "start": "remix-serve ./build/index.js",
     "typecheck": "tsc"
   },
   "dependencies": {
+    "@carbon/react": "^1.44.0",
+    "@carbon/styles": "^1.44.0",
     "@remix-run/css-bundle": "^2.3.1",
     "@remix-run/node": "^2.3.1",
     "@remix-run/react": "^2.3.1",
     "@remix-run/serve": "^2.3.1",
     "isbot": "^3.6.8",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "sass": "^1.69.5"
   },
   "devDependencies": {
     "@remix-run/dev": "^2.3.1",
