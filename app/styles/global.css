@@ -1,0 +1,24 @@
+/* Error: Can't find stylesheet to import.
+ *    ,
+ * 70 | / @forward '@carbon/grid/scss/config' hide $prefix,
+ * 71 | |   $flex-grid-columns with (
+ * 72 | |     $prefix: $prefix,
+ * 73 | |     $flex-grid-columns: $flex-grid-columns
+ * 74 | |   );
+ *    | '---^
+ *    '
+ *   node_modules/@carbon/styles/scss/_config.scss 70:1  @forward
+ *   @carbon/index.scss 8:1                              @forward
+ *   @carbon/index.scss 9:1                              @use
+ *   app/styles/global.scss 1:1                          root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Can't find stylesheet to import.\a    \2577 \a 70 \2502  \250c  @forward '@carbon/grid/scss/config' hide $prefix,\a 71 \2502  \2502    $flex-grid-columns with (\a 72 \2502  \2502      $prefix: $prefix,\a 73 \2502  \2502      $flex-grid-columns: $flex-grid-columns\a 74 \2502  \2502    );\a    \2502  \2514 \2500 \2500 \2500 ^\a    \2575 \a   node_modules/@carbon/styles/scss/_config.scss 70:1  @forward\a   @carbon/index.scss 8:1                              @forward\a   @carbon/index.scss 9:1                              @use\a   app/styles/global.scss 1:1                          root stylesheet";
+}
