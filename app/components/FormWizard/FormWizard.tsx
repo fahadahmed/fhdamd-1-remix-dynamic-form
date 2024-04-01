@@ -1,8 +1,10 @@
+
 // import { ValidatedForm } from 'remix-validated-form';
 // import { z } from 'zod';
 // import { withZod } from '@remix-validated-form/with-zod';
 import { useState } from 'react';
 import styles from './FormWizard.module.css';
+import Button from '../Button';
 
 export const formWizardLinks = () => {
   return [
@@ -91,14 +93,23 @@ export default function FormWizard() {
           return (
             <div key={index} style={{ display: index === currentStep ? 'block' : 'none' }}>
               <h2>{step.title}</h2>
-              <button onClick={() => handleSection('prev')}>Previous</button>
-              <button onClick={() => handleSection('next')}>Next</button>
+              <Button onClick={() => handleSection('prev')} label="Previous" variant="secondary" />
+              <Button onClick={() => handleSection('next')} label="Next" />
             </div>
           )
         }
         )}
       </div>
-      <div style={{ padding: '2rem' }}>SIDEBAR</div>
+      <div style={{ padding: '2rem' }}>
+        <h3>On this page</h3>
+        <ul>
+          {formConfig.steps.map((stepData, index) => (
+            <li key={index} style={{ marginBottom: '1rem' }} /* onClick={() => setCurrentStep(index)} */>
+              {currentStep === index ? <strong>{stepData.title}</strong> : stepData.title}
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   )
 }
